@@ -1,0 +1,59 @@
+
+/*https://www.youtube.com/watch?v=eyGzOnOfzqA */ 
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+  }
+  
+  body {
+    background: #d28e8e;
+  }
+  
+  section {
+    width: 500px;
+    margin: 50px auto;
+  }
+  
+  .face {
+    width: 350px;
+    height: 500px;
+    perspective: 700px;
+  }
+  
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 1000ms;
+  }
+  
+  .front {
+    background: rgb(236, 85, 193);
+    z-index: 1;
+  }
+  
+  .back {
+    background: lightslategray;
+    transform: rotateY(-180deg);
+    backface-visibility: visible;
+    background-image: url(exemploFlipCard/cafe.jpg);
+    background-size: cover; 
+  }
+  
+  .face:hover .front {
+    transform: rotateY(180deg);
+    z-index: 0;
+  }
+  
+  .face:hover .back {
+    transform: rotateY(0);
+    z-index: 1;
+  }
